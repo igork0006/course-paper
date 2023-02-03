@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчет по прибыли от поставщиков</title>
+    <style type="text/css">
+      h2 { font-size  : 14pt;
+           color      : black
+      }
+      label { font-size  : 14pt;
+              color      : green
+      }
+    </style>
+</head>
+<body>
+  <h1 align = "center"> Отчет по прибыли от поставщиков</h1>
+  <div align = center>
+      <a> Поиск отчета по месяцу и году</a>
+        <form action="", method ="POST">
+            <label for=report_month>Введите номер месяца</label>
+            <input name = report_month id="report_month" type = text placeholder = report_month>
+            <br>
+            <label for=report_year>Введите год</label>
+            <input name = report_year id="report_year" type = text placeholder = report_year>
+            <br><br>
+            <input type = submit value ="Отправить"><br><br>
+            <a href="{{ url_for('bp_report.view') }}">Вернуться общий список отчетов</a>
+            <br><br>
+        </form>
+  </div>
+
+    <table border = 1 width = 80%>
+      <tr>
+          {% for column in schema %}
+            <td class= border align="center">{{column}}</td>
+          {% endfor %}
+      </tr>
+        {% for line in result %}
+          <tr>
+           {% for column in line %}
+            <td align = 'center'> {{column}} </td>
+           {% endfor %}
+         </tr>
+        {% endfor %}
+    </table> <br><br>
+
+</body>
+</html>

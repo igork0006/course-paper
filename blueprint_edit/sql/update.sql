@@ -1,0 +1,1 @@
+UPDATE _order SET status='$status' WHERE idOrder='$id'

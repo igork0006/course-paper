@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение статуса заказа</title>
+    <style type="text/css">
+      h2 { font-size  : 14pt;
+           color      : black
+      }
+      label { font-size  : 14pt;
+              color      : green
+      }
+    </style>
+</head>
+<body>
+  <h1 align = "center"> Изменение статуса заказа</h1>
+  <div align = center>
+      <a> Введите id нужного заказа и новый статус</a>
+        <form action="", method ="POST">
+            <label for=id>ID</label>
+            <input name = id id="id" type = text placeholder = id>
+            <br>
+            <label for=status>Новый статус заказа</label>
+            <input name = status id="status" type = text placeholder = status>
+            <br><br>
+            <input type = submit value ="Отправить"><br><br>
+            <a href="{{ url_for('bp_edit.start_page') }}">В общее меню редактирования</a>
+            <br><br>
+        </form>
+  </div>
+
+    <table border = 1 width = 80%>
+      <tr>
+          {% for column in schema %}
+            <td class= border align="center">{{column}}</td>
+          {% endfor %}
+      </tr>
+        {% for line in result %}
+          <tr>
+           {% for column in line %}
+            <td align = 'center'> {{column}} </td>
+           {% endfor %}
+         </tr>
+        {% endfor %}
+    </table> <br><br>
+
+</body>
+</html>

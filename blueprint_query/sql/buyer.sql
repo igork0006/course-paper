@@ -1,0 +1,1 @@
+select idBuyer, name, adress, phone, requisites, date_of_reg from buyer where name='$input_buyer'

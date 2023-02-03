@@ -1,0 +1,17 @@
+{
+  "director": [
+    "bp_query",
+    "bp_report.report1",
+    "bp_report.report2",
+    "bp_report.report3",
+    "bp_report.view"
+  ],
+  "manager": [
+    "bp_query",
+    "bp_report"
+  ],
+  "external": [
+    "bp_order",
+    "bp_query.product"
+  ]
+}

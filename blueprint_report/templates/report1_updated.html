@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчет по прибыли от поставщиков за {{month}}-й месяц {{year}} года</title>
+    <style type="text/css">
+      h2 { font-size  : 14pt;
+           color      : black
+      }
+      label { font-size  : 14pt;
+              color      : green
+      }
+    </style>
+</head>
+<body>
+  <h1 align = "center"> Отчет по прибыли от поставщиков за {{month}}-й месяц {{year}} года </h1>
+    <p align="center">
+        <a href="{{ url_for('bp_report.report1') }}">Вернуться общий список отчетов о прибыли</a>
+    </p>
+    <table border = 1 width = 80%>
+      <tr>
+          {% for column in schema %}
+            <td class= border align="center">{{column}}</td>
+          {% endfor %}
+      </tr>
+        {% for line in result %}
+          <tr>
+           {% for column in line %}
+            <td align = 'center'> {{column}} </td>
+           {% endfor %}
+         </tr>
+        {% endfor %}
+    </table> <br><br>
+
+    <p align="center">
+        <a href="{{ url_for('bp_report.create_report') }}">Если нужных вам отчетов нет- не страшно, можно создать новый</a>
+    </p>
+
+</body>
+</html>

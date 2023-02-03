@@ -1,0 +1,1 @@
+select idProduct, name, productcol, price from product

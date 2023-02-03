@@ -1,0 +1,1 @@
+select idProduct, name, productcol, price from product where idProduct = '$prod_id'

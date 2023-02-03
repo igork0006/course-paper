@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Созданние отчетов</title>
+</head>
+<body>
+<h1 align = "center"> Создание отчетов</h1>
+  <br>
+    <p align="center">
+        <a href="{{ url_for('bp_report.create1') }}"> Отчеты по прибыли от каждого поставщика </a><br><br>
+        <a href="{{ url_for('bp_report.create2') }}"> Оччеты о товарах на складе </a><br><br>
+        <a href="{{ url_for('bp_report.create3') }}"> Отчеты о истекших заказах </a><br><br>
+        <br><br><br><br>
+        <a href="{{ url_for('bp_report.menu') }}"> Нажмите для выхода в меню отчетов</a>
+    </p>
+</body>
+</html>
